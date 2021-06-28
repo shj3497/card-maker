@@ -1,0 +1,5 @@
+@value makerPink from './common/colors.css';
+
+.title {
+  color: makerPink;
+}
