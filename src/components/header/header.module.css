@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 50px;
+  background: #1565c0;
+}
+
+.container h1 {
+  padding: 10px 0 10px 0;
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 500;
+}

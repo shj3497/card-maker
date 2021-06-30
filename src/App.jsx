@@ -1,10 +1,13 @@
 import React from 'react';
+import Login from './components/login/login';
 import styles from './App.module.css'
 
-const App = (props) => {
+const App = ({authService}) => {
 
   return(
-    <h1 className="">Hello</h1>
+    <div>
+      <Login authService={authService} />
+    </div>
   )
 }
 
