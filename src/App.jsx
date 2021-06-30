@@ -4,7 +4,7 @@ import styles from './App.module.css'
 const App = (props) => {
 
   return(
-    <h1 className={styles.title}>Hello</h1>
+    <h1 className="">Hello</h1>
   )
 }
 
