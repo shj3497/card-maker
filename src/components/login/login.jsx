@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import Header from '../header/header';
 import Footer from '../footer/footer';
@@ -6,13 +6,14 @@ import styles from './login.module.css'
 
 const Login = ({authService}) => {
 
+  const [userInfo, setUserInfo] = useState([]);
   const history = useHistory();
 
   const goToMaker = (userId) => {
     history.push({
       pathname: '/maker',
       state: {
-        id: userId
+        id: userId,
       }
     })
   }
@@ -23,6 +24,7 @@ const Login = ({authService}) => {
       .login(event.currentTarget.textContent)
       .then((result) => {
         console.log(result);
+        setUserInfo(result.user);
         goToMaker(result.user.uid);
       });
   }  
@@ -39,7 +41,7 @@ const Login = ({authService}) => {
 
   return(
     <section className={styles.container}>
-      <Header loginChk={false} display={'small'} />
+      <Header loginChk={false} display={'small'} userInfo={userInfo} />
       <section className={styles.loginSection}>
         <h1>LOGIN</h1>
         <ul>

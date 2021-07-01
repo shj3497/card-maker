@@ -1,2 +1,15 @@
+.section {
+  height: 100vh;
+}
+
 .container {
+  display: flex;
+  width: 100vw;
+  height: 90%;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    display: block;
+  }
 }

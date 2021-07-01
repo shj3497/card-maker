@@ -2,16 +2,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
   background: #1565c0;
 }
 
 .container.small {
   width: 400px;
+  height: 50px;
 }
 
 .container.full {
   width: 100vw;
+  height: 5%;
 }
 
 .container h1 {

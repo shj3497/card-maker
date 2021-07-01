@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { useHistory } from 'react-router';
 import Header from '../header/header';
 import Footer from '../footer/footer';
-import { useHistory } from 'react-router';
+import CardMakerList from '../card_maker_list/card_maker_list';
+import CardPreivewList from '../card_preview_list/card_preivew_list';
 import styles from './maker.module.css';
 
 const Maker = ({authService}) => {
@@ -22,8 +24,12 @@ const Maker = ({authService}) => {
   })
 
   return(
-    <section className={styles.container}>
+    <section className={styles.section}>
       <Header onLogout={onLogout} loginChk={true} display={'full'} />
+      <div className={styles.container}>
+        <CardMakerList />
+        <CardPreivewList />
+      </div>
       <Footer displayType={'full'}/>
     </section>
   )

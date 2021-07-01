@@ -1,0 +1,13 @@
+.container {
+  width: 50%;
+  text-align: center;
+  color: white;
+  overflow: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 100%;
+    height: 50%;
+  }
+}

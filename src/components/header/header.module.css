@@ -1,17 +1,19 @@
 .container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
   background: #1565c0;
 }
 
 .container.small {
   width: 400px;
+  height: 50px;
 }
 
 .container.full {
   width: 100vw;
+  height: 5%;
 }
 
 .container h1 {
@@ -21,9 +23,7 @@
   font-weight: 500;
 }
 
-.logout {
-  /* background: transparent;
-  border: 0;
-  display: flex;
-  cursor: pointer; */
+.userInfoContainer {
+  position: absolute;
+  right: 10px;
 }
