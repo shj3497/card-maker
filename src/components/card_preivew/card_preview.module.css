@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.user__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 200px;
+  background: #121212;
+  border-radius: 50px;
+}
+
+.imgbox {
+  width: 150px;
+  height: 150px;
+}
+
+.imgbox img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.textbox {
+  text-align: start;
+  color: #aaaaaa;
+}
+
+.textbox h2 {
+  padding: 2px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.textbox h3 {
+  padding: 2px;
+  font-size: 1.2rem;
+}
+
+.textbox span {
+  content: "";
+  display: block;
+  height: 1px;
+  background: gray;
+  width: 100%;
+  margin: 2px 0 2px 0;
+}
+
+.textbox p {
+  padding: 2px;
+  font-size: 1rem;
+}
