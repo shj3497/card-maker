@@ -7,9 +7,9 @@ const CardMakerList = ({userInfos}) => {
   return(
     <div className={styles.container}>
       <h1>Card Maker</h1>
-      <ul>
+      <ul className={styles.list}>
         {
-          userInfos.map(userInfo => <CardMaker key={userInfo.key} userInfo={userInfo} />)
+          userInfos.map(userInfo => <CardMaker key={userInfo.id} userInfo={userInfo} />)
         }
       </ul>
     </div>

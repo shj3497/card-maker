@@ -1,0 +1,16 @@
+button {
+  border: 0;
+}
+
+.button {
+  width: 50%;
+  height: 30px;
+  outline: none;
+  cursor: pointer;
+  background: #e1bee7;
+  border: 1px solid #4f4f4f;
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 300ms linear;
+}

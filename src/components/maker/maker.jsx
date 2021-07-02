@@ -10,15 +10,53 @@ const Maker = ({authService}) => {
 
   const [userInfo, setUserInfo] = useState([
     {
-      key: '2021-07-01',
+      id: '2021-07-01',
       name: 'shimhyoekjin',
-      img: 'https://res.cloudinary.com/hyeokjin/image/upload/v1625128268/%EC%A6%9D%EB%AA%851_bptcio.jpg',
+      fileName: 'hyeokjin',
+      fileURL: 'https://res.cloudinary.com/hyeokjin/image/upload/v1625128268/%EC%A6%9D%EB%AA%851_bptcio.jpg',
       company: '펜타클',
-      job: 'Software Engineer',
+      title: 'Software Engineer',
+      mobile: '010-1234-5678',
       email: 'shj3497@gmail.com',
-      text: `I'm aimming a full stack developer`
-    }
-
+      address: `I'm aimming a full stack developer`,
+      theme: 'dark'
+    },
+    {
+      id: '2021-07-02',
+      name: 'shimhyoekjin',
+      fileName: 'hyeokjin',
+      fileURL: null,
+      company: '펜타클',
+      title: 'Software Engineer',
+      mobile: '010-1234-5678',
+      email: 'shj3497@gmail.com',
+      address: `I'm aimming a full stack developer`,
+      theme: 'light'
+    },
+    {
+      id: '2021-07-03',
+      name: 'shimhyoekjin',
+      fileName: 'hyeokjin',
+      fileURL: 'https://res.cloudinary.com/hyeokjin/image/upload/v1625128268/%EC%A6%9D%EB%AA%851_bptcio.jpg',
+      company: '펜타클',
+      title: 'Software Engineer',
+      mobile: '010-1234-5678',
+      email: 'shj3497@gmail.com',
+      address: `I'm aimming a full stack developer`,
+      theme: 'colorful'
+    },
+    {
+      id: '2021-07-04',
+      name: 'shimhyoekjin',
+      fileName: 'hyeokjin',
+      fileURL: 'https://res.cloudinary.com/hyeokjin/image/upload/v1625128268/%EC%A6%9D%EB%AA%851_bptcio.jpg',
+      company: '펜타클',
+      title: 'Software Engineer',
+      mobile: '010-1234-5678',
+      email: 'shj3497@gmail.com',
+      address: `I'm aimming a full stack developer`,
+      theme: 'colorful'
+    },
   ]);
 
   const history = useHistory();
@@ -43,7 +81,7 @@ const Maker = ({authService}) => {
         <CardMakerList userInfos={userInfo}/>
         <CardPreivewList userInfos={userInfo} />
       </div>
-      <Footer displayType={'full'}/>
+      {/* <Footer displayType={'full'}/> */}
     </section>
   )
 }
