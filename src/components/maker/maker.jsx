@@ -8,18 +8,18 @@ import styles from './maker.module.css';
 
 const Maker = ({authService}) => {
 
-  const [userInfo, setUserInfo] = useState([
+  const [userInfos, setUserInfos] = useState([
     {
       id: '2021-07-01',
       name: 'shimhyoekjin',
       fileName: 'hyeokjin',
       fileURL: 'https://res.cloudinary.com/hyeokjin/image/upload/v1625128268/%EC%A6%9D%EB%AA%851_bptcio.jpg',
       company: '펜타클',
-      title: 'Software Engineer',
+      position: 'Software Engineer',
       mobile: '010-1234-5678',
       email: 'shj3497@gmail.com',
       address: `I'm aimming a full stack developer`,
-      theme: 'dark'
+      theme: 'Dark'
     },
     {
       id: '2021-07-02',
@@ -27,11 +27,11 @@ const Maker = ({authService}) => {
       fileName: 'hyeokjin',
       fileURL: null,
       company: '펜타클',
-      title: 'Software Engineer',
+      position: 'Software Engineer',
       mobile: '010-1234-5678',
       email: 'shj3497@gmail.com',
       address: `I'm aimming a full stack developer`,
-      theme: 'light'
+      theme: 'Light'
     },
     {
       id: '2021-07-03',
@@ -39,11 +39,11 @@ const Maker = ({authService}) => {
       fileName: 'hyeokjin',
       fileURL: 'https://res.cloudinary.com/hyeokjin/image/upload/v1625128268/%EC%A6%9D%EB%AA%851_bptcio.jpg',
       company: '펜타클',
-      title: 'Software Engineer',
+      position: 'Software Engineer',
       mobile: '010-1234-5678',
       email: 'shj3497@gmail.com',
       address: `I'm aimming a full stack developer`,
-      theme: 'colorful'
+      theme: 'Colorful'
     },
     {
       id: '2021-07-04',
@@ -51,11 +51,11 @@ const Maker = ({authService}) => {
       fileName: 'hyeokjin',
       fileURL: 'https://res.cloudinary.com/hyeokjin/image/upload/v1625128268/%EC%A6%9D%EB%AA%851_bptcio.jpg',
       company: '펜타클',
-      title: 'Software Engineer',
+      position: 'Software Engineer',
       mobile: '010-1234-5678',
       email: 'shj3497@gmail.com',
       address: `I'm aimming a full stack developer`,
-      theme: 'colorful'
+      theme: 'Colorful'
     },
   ]);
 
@@ -63,6 +63,11 @@ const Maker = ({authService}) => {
   const onLogout = () => {
     console.log('logout')
     authService.logout()
+  }
+
+  const addCard = (card) => {
+    const updated = [...userInfos, card];
+    setUserInfos(updated);
   }
 
   useEffect(() => {
@@ -78,8 +83,8 @@ const Maker = ({authService}) => {
     <section className={styles.section}>
       <Header onLogout={onLogout} loginChk={true} display={'full'} />
       <div className={styles.container}>
-        <CardMakerList userInfos={userInfo}/>
-        <CardPreivewList userInfos={userInfo} />
+        <CardMakerList userInfos={userInfos} addCard={addCard}/>
+        <CardPreivewList userInfos={userInfos} />
       </div>
       {/* <Footer displayType={'full'}/> */}
     </section>

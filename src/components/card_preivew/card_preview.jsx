@@ -7,18 +7,16 @@ const CardPreview = ({userInfo}) => {
   const url = userInfo.fileURL || DEFAULT_IMAGE;
   const getStyles = (theme) => {
     switch(theme){
-      case 'dark':
+      case 'Dark':
         return styles.dark;
-      case 'light':
+      case 'Light':
         return styles.light;
-      case 'colorful':
+      case 'Colorful':
         return styles.colorful;
       default:
         throw new Error(`Unknown theme: ${theme}`);
     }
   }
-
-  console.log(userInfo.theme)
 
   return(
     <li className={styles.container}>

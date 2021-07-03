@@ -17,13 +17,13 @@ const CardMaker = ({userInfo}) => {
             <input type="text" name="name" value={userInfo.name} />
             <input type="text" name="company" value={userInfo.company} />
             <select name="theme" value={userInfo.theme}>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-              <option value="colorful">Colorful</option>
+              <option value="Light">Light</option>
+              <option value="Dark">Dark</option>
+              <option value="Colorful">Colorful</option>
             </select>
           </div>
           <div className={styles.col_2}>
-            <input type="text" name="title" value={userInfo.title} />
+            <input type="text" name="position" value={userInfo.position} />
             <input type="text" name="email" value={userInfo.email} />
           </div>
           <div className={styles.col_3}>
