@@ -18,7 +18,6 @@ input[type="file"] {
   line-height: 40px;
   outline: none;
   cursor: pointer;
-  background: #e1bee7;
   border: 1px solid #aaaaaa;
   color: black;
   font-size: rem;
@@ -26,6 +25,41 @@ input[type="file"] {
   transition: all 300ms linear;
 }
 
-.imgUploader:hover {
+.imgUploader.pink {
+  background: #e1bee7;
+}
+
+.imgUploader.gray {
+  background: gray;
+}
+
+.imgUploader.pink:hover {
   background: #d08fda;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background: #e1bee7;
+}
+
+.loading > span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #aaaaaa;
+  border-top: 2px solid #512abb;
+  animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
