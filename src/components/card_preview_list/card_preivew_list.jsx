@@ -8,7 +8,11 @@ const CardPreivewList = ({userInfos}) => {
       <h1>Card Preview</h1>
       <ul className={styles.list}>
         {
-          userInfos.map(userInfo => <CardPreview key={userInfo.id} userInfo={userInfo} />)
+          Object.keys(userInfos).map(key => 
+            <CardPreview 
+              key={key} 
+              userInfo={userInfos[key]} 
+            />)
         }
       </ul>
     </div>

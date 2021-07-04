@@ -8,8 +8,8 @@ import styles from './maker.module.css';
 
 const Maker = ({authService}) => {
 
-  const [userInfos, setUserInfos] = useState([
-    {
+  const [userInfos, setUserInfos] = useState({
+    '2021-07-01': {
       id: '2021-07-01',
       name: 'shimhyoekjin',
       fileName: 'hyeokjin',
@@ -21,7 +21,7 @@ const Maker = ({authService}) => {
       address: `I'm aimming a full stack developer`,
       theme: 'Dark'
     },
-    {
+    '2021-07-02': {
       id: '2021-07-02',
       name: 'shimhyoekjin',
       fileName: 'hyeokjin',
@@ -33,7 +33,7 @@ const Maker = ({authService}) => {
       address: `I'm aimming a full stack developer`,
       theme: 'Light'
     },
-    {
+    '2021-07-03': {
       id: '2021-07-03',
       name: 'shimhyoekjin',
       fileName: 'hyeokjin',
@@ -45,7 +45,7 @@ const Maker = ({authService}) => {
       address: `I'm aimming a full stack developer`,
       theme: 'Colorful'
     },
-    {
+    '2021-07-04': {
       id: '2021-07-04',
       name: 'shimhyoekjin',
       fileName: 'hyeokjin',
@@ -57,7 +57,7 @@ const Maker = ({authService}) => {
       address: `I'm aimming a full stack developer`,
       theme: 'Colorful'
     },
-  ]);
+  });
 
   const history = useHistory();
   const onLogout = () => {
@@ -65,9 +65,24 @@ const Maker = ({authService}) => {
     authService.logout()
   }
 
-  const addCard = (card) => {
-    const updated = [...userInfos, card];
-    setUserInfos(updated);
+  const createOrUpdateCard = (card) => {
+    // const updated = {...userInfos};
+    // updated[card.id] = card;
+    // setUserInfos(updated);
+    //! 콜백함수로도 사용이 가능하다. 
+    setUserInfos(userInfos => {
+      const updated = { ...userInfos };
+      updated[card.id] = card;
+      return updated;
+    })
+  }
+
+  const deleteCard = (card) => {
+    setUserInfos(userInfos => {
+      const updated = {...userInfos};
+      delete updated[card.id];
+      return updated;
+    })
   }
 
   useEffect(() => {
@@ -83,7 +98,12 @@ const Maker = ({authService}) => {
     <section className={styles.section}>
       <Header onLogout={onLogout} loginChk={true} display={'full'} />
       <div className={styles.container}>
-        <CardMakerList userInfos={userInfos} addCard={addCard}/>
+        <CardMakerList 
+          userInfos={userInfos} 
+          addCard={createOrUpdateCard} 
+          updateCard={createOrUpdateCard}
+          deleteCard={deleteCard} 
+        />
         <CardPreivewList userInfos={userInfos} />
       </div>
       {/* <Footer displayType={'full'}/> */}
