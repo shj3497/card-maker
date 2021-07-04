@@ -1,9 +1,8 @@
 import React from 'react';
 import Button from '../button/button';
-import ImageFileInput from '../image_file_input/image_file_input';
 import styles from './card_maker.module.css'
 
-const CardMaker = ({userInfo, updateCard, deleteCard}) => {
+const CardMaker = ({FileInput, userInfo, updateCard, deleteCard}) => {
 
   const onSubmit = () => {
     deleteCard(userInfo);
@@ -17,6 +16,14 @@ const CardMaker = ({userInfo, updateCard, deleteCard}) => {
     updateCard({
       ...userInfo,
       [event.currentTarget.name]: event.currentTarget.value
+    })
+  }
+
+  const onFileChange = (file) => {
+    updateCard({
+      ...userInfo,
+      fileName: file.name,
+      fileURL: file.url
     })
   }
 
@@ -42,7 +49,7 @@ const CardMaker = ({userInfo, updateCard, deleteCard}) => {
             <input type="text" name="address" value={userInfo.address} onChange={onChange} />
           </div>
           <div className={styles.col_4}>
-            <ImageFileInput />
+            <FileInput name={userInfo.fileName} onFileChange={onFileChange} />
             <Button name='Delete' onClick={onSubmit} />
           </div>
         

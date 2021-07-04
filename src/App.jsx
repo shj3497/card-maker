@@ -8,13 +8,13 @@ import Login from './components/login/login';
 import Maker from './components/maker/maker';
 import styles from './App.module.css'
 
-const App = ({authService}) => {
+const App = ({FileInput, authService}) => {
 
   return(
     <Router>
       <Switch>
         <Route path="/maker">
-          <Maker authService={authService} />
+          <Maker FileInput={FileInput} authService={authService} />
         </Route>
         <Route exact path="/">
           <Login authService={authService} />

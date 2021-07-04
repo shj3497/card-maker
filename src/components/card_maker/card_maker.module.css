@@ -36,13 +36,14 @@ input {
 .col_1 > input {
   width: 35%;
   height: 40px;
+  border: 1px solid #aaaaaa;
 }
 
 .col_1 > select {
   width: 30%;
   height: 40px;
   padding: 10px;
-  border: 1;
+  border: 1px solid #aaaaaa;
   outline: none;
 }
 
@@ -50,4 +51,8 @@ input {
 .col_3 > input {
   width: 50%;
   height: 40px;
+}
+
+.col_4 {
+  display: flex;
 }

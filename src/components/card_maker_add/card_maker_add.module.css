@@ -31,6 +31,7 @@ input {
   font-weight: 400;
   padding: 10px;
   outline: none;
+  border: 1px solid #aaaaaa;
 }
 
 .col_1 > input {
@@ -42,7 +43,7 @@ input {
   width: 30%;
   height: 40px;
   padding: 10px;
-  border: 1;
+  border: 1px solid #aaaaaa;
   outline: none;
 }
 
@@ -50,4 +51,8 @@ input {
 .col_3 > input {
   width: 50%;
   height: 40px;
+}
+
+.col_4 {
+  display: flex;
 }

@@ -6,7 +6,7 @@ import CardMakerList from '../card_maker_list/card_maker_list';
 import CardPreivewList from '../card_preview_list/card_preivew_list';
 import styles from './maker.module.css';
 
-const Maker = ({authService}) => {
+const Maker = ({FileInput, authService}) => {
 
   const [userInfos, setUserInfos] = useState({
     '2021-07-01': {
@@ -99,6 +99,7 @@ const Maker = ({authService}) => {
       <Header onLogout={onLogout} loginChk={true} display={'full'} />
       <div className={styles.container}>
         <CardMakerList 
+          FileInput={FileInput}
           userInfos={userInfos} 
           addCard={createOrUpdateCard} 
           updateCard={createOrUpdateCard}

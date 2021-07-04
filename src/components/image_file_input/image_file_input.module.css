@@ -1,16 +1,31 @@
-button {
-  border: 0;
+input[type="file"] {
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
-.button {
+.container {
   width: 50%;
-  height: 30px;
+}
+
+.input {
+  display: none;
+}
+
+.imgUploader {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
   outline: none;
   cursor: pointer;
   background: #e1bee7;
-  border: 1px solid #4f4f4f;
+  border: 1px solid #aaaaaa;
   color: black;
-  font-size: 1rem;
+  font-size: rem;
   font-weight: 500;
   transition: all 300ms linear;
+}
+
+.imgUploader:hover {
+  background: #d08fda;
 }
