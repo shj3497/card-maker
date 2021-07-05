@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import Header from '../header/header';
-import Footer from '../footer/footer';
 import CardMakerList from '../card_maker_list/card_maker_list';
 import CardPreivewList from '../card_preview_list/card_preivew_list';
 import styles from './maker.module.css';
@@ -50,7 +49,7 @@ const Maker = ({FileInput, authService, cardRepository}) => {
     
     return () => stopSync();
 
-  }, [userId])
+  }, [userId, cardRepository])
 
   useEffect(() => {
     authService
@@ -61,7 +60,7 @@ const Maker = ({FileInput, authService, cardRepository}) => {
           history.push('/');
         }
       })
-  })
+  }, [authService, history])
 
   return(
     <section className={styles.section}>

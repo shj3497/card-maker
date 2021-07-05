@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import Login from './components/login/login';
 import Maker from './components/maker/maker';
-import styles from './App.module.css'
 
 const App = ({FileInput, authService, cardRepository}) => {
 
