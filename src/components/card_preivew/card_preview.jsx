@@ -28,7 +28,7 @@ const CardPreview = ({userInfo}) => {
           <h2>{userInfo.name}</h2>
           <h3>{userInfo.company}</h3>
           <span></span>
-          <p>{userInfo.title}</p>
+          <p>{userInfo.position}</p>
           <p>{userInfo.mobile}</p>
           <p>{userInfo.email}</p>
           <p>{userInfo.address}</p>
