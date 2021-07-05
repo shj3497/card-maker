@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Button from '../button/button';
 import styles from './card_maker.module.css'
 
-const CardMaker = ({FileInput, userInfo, updateCard, deleteCard}) => {
+const CardMaker = memo(({FileInput, userInfo, updateCard, deleteCard}) => {
 
   const onSubmit = () => {
     deleteCard(userInfo);
@@ -57,6 +57,6 @@ const CardMaker = ({FileInput, userInfo, updateCard, deleteCard}) => {
       </div>
     </li>
   )
-}
+})
 
 export default CardMaker;

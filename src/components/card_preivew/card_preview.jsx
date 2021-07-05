@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {memo} from 'react';
 import styles from './card_preview.module.css'
 
 const DEFAULT_IMAGE = '/img/default_img.png';
-const CardPreview = ({userInfo}) => {
+const CardPreview = memo( ({userInfo}) => {
 
   const url = userInfo.fileURL || DEFAULT_IMAGE;
   const getStyles = (theme) => {
@@ -36,6 +36,6 @@ const CardPreview = ({userInfo}) => {
       </div>
     </li>
   )
-}
+})
 
 export default CardPreview;

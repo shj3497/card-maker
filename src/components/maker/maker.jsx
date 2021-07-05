@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router';
 import Header from '../header/header';
 import CardMakerList from '../card_maker_list/card_maker_list';
@@ -12,9 +12,11 @@ const Maker = ({FileInput, authService, cardRepository}) => {
   const [userInfos, setUserInfos] = useState({});
   const [userId, setUserId] = useState(historyState && historyState.id);
 
-  const onLogout = () => {
+  // 함수가 계속 호출이 되어도(props)가 바뀌더라도 동일한 데이터를 쓴다. useCallback
+  // 만약 authService라는 props가 변경이 되면 그때 이 함수를 실행한다.
+  const onLogout = useCallback(() => {
     authService.logout()
-  }
+  }, [authService])
 
   const createOrUpdateCard = (card) => {
     // const updated = {...userInfos};

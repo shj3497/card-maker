@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, memo } from 'react';
 import Button from '../button/button';
 import styles from './card_maker_add.module.css'
 
-const CardMakerAdd = ({FileInput, onAdd}) => {
+const CardMakerAdd = memo(({FileInput, onAdd}) => {
 
   const formRef = useRef();
   const nameRef = useRef();
@@ -72,6 +72,6 @@ const CardMakerAdd = ({FileInput, onAdd}) => {
       </div>
     </li>
   )
-}
+})
 
 export default CardMakerAdd;

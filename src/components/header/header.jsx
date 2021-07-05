@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './header.module.css'
 
-const Header = ({loginChk, onLogout, display}) => {
-
+const Header = memo(({loginChk, onLogout, display}) => {
 
   const displayType = display === 'small' ? styles.small : styles.full;
   
@@ -20,6 +19,6 @@ const Header = ({loginChk, onLogout, display}) => {
       }
     </section>
   )
-}
+})
 
 export default Header;
