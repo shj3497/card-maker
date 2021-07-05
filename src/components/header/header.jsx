@@ -13,7 +13,7 @@ const Header = ({loginChk, onLogout, display}) => {
         loginChk && (
           <div className={styles.userInfoContainer}>
             <button className={styles.logout} onClick={()=>{onLogout()}} >
-              <span><i className="fas fa-sign-out-alt"></i>Sign out</span>
+              <span>Logout<i className="fas fa-sign-out-alt"></i></span>
             </button>
           </div>
         )

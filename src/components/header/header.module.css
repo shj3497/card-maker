@@ -25,5 +25,31 @@
 
 .userInfoContainer {
   position: absolute;
-  right: 50px;
+  right: 60px;
+}
+
+.logout {
+  margin: 0;
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  transition: all 300ms ease-in-out;
+}
+
+.logout:hover {
+  background: #c62828;
+}
+
+.logout > span {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.logout i {
+  padding-left: 10px;
+  font-size: 1.2rem;
 }
